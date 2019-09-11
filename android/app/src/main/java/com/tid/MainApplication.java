@@ -1,4 +1,4 @@
-package com.instarocket;
+package com.tid;
 
 import android.app.Application;
 import android.util.Log;

@@ -1,25 +1,37 @@
 import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
+// import { createStackNavigator } from 'react-navigation-stack';
 
-import Main from './pages/Main';
-import User from './pages/User';
+import Textos from './pages/Textos';
+import SRS from './pages/SRS';
 
 const Routes = createAppContainer(
-  createStackNavigator(
+  createMaterialTopTabNavigator(
     {
-      Main,
-      User,
+      Textos,
+      Repetição: SRS,
     },
     {
-      headerLayoutPreset: 'center',
-      headerBackTitleVisible: false,
-      defaultNavigationOptions: {
-        headerStyle: {
+      tabBarOptions: {
+        activeTintColor: '#fefefe',
+        labelStyle: {
+          fontSize: 20,
+        },
+        style: {
           backgroundColor: '#004',
         },
-        headerTintColor: '#fff',
       },
     }
+    // {
+    //   headerLayoutPreset: 'center',
+    //   headerBackTitleVisible: false,
+    //   defaultNavigationOptions: {
+    //     headerStyle: {
+    //       backgroundColor: '#004',
+    //     },
+    //     headerTintColor: '#fff',
+    //   },
+    // }
   )
 );
 
