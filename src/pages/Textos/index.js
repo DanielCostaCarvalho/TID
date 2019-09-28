@@ -1,16 +1,31 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import ListaTexto from './Components/ListaTexto';
+import AdicionarTexto from './Components/AdicionarTexto';
 // import { Container } from './styles';
 
-export default function Textos() {
-  return (
-    <View>
-      <Text>Página de textos</Text>
-    </View>
-  );
-}
+const Textos = createAppContainer(
+  createStackNavigator(
+    {
+      Litagem: ListaTexto,
+      Adicionar: AdicionarTexto,
+    },
+    {
+      headerLayoutPreset: 'center',
+      headerBackTitleVisible: false,
+      defaultNavigationOptions: {
+        headerStyle: {
+          backgroundColor: '#006',
+        },
+        headerTintColor: '#fff',
+      },
+    }
+  )
+);
 
 Textos.navigationOptions = {
   title: 'Textos',
 };
+
+export default Textos;
