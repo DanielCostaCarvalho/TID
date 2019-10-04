@@ -3,6 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import ListaTexto from './Components/ListaTexto';
 import AdicionarTexto from './Components/AdicionarTexto';
+import LerTexto from './Components/LerTexto';
 // import { Container } from './styles';
 
 const Textos = createAppContainer(
@@ -10,6 +11,7 @@ const Textos = createAppContainer(
     {
       Litagem: ListaTexto,
       Adicionar: AdicionarTexto,
+      Leitura: LerTexto,
     },
     {
       headerLayoutPreset: 'center',

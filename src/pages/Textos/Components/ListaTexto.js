@@ -7,6 +7,10 @@ import { List, Container, Title, Excerpt, TextButton } from './styles';
 const dados = Texto.findAll();
 
 export default function ListaTexto({ navigation }) {
+  const handleToReader = texto => {
+    navigation.navigate('Leitura', { texto });
+  };
+
   return (
     <Container>
       <Button
@@ -20,7 +24,7 @@ export default function ListaTexto({ navigation }) {
         keyExtractor={dado => String(dado.titulo)}
         renderItem={({ item }) => {
           return (
-            <TextButton>
+            <TextButton onPress={() => handleToReader(item)}>
               <Title>{item.titulo}</Title>
               <Excerpt>{item.texto}</Excerpt>
             </TextButton>
