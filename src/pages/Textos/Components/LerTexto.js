@@ -1,14 +1,23 @@
 import React, { useEffect } from 'react';
-import { Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import { SelectableText } from '@astrocoders/react-native-selectable-text';
 
-// import { Container } from './styles';
+import { Title } from './styles';
 
 export default function LerTexto({ navigation }) {
   const { texto } = navigation.state.params;
   return (
-    <>
-      <Text>{texto.titulo}</Text>
-      <Text>{texto.texto}</Text>
-    </>
+    <ScrollView>
+      <Title>Título: {texto.titulo}</Title>
+      <SelectableText
+        menuItems={['Adicionar']}
+        onSelection={({ eventType, content, selectionStart, selectionEnd }) => {
+          if (eventType == 'Adicionar') {
+            navigation.goBack();
+          }
+        }}
+        value={texto.texto}
+      />
+    </ScrollView>
   );
 }
