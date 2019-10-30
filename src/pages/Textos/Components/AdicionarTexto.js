@@ -7,7 +7,7 @@ import { Container, InputTitle, Title, InputText } from './styles';
 
 export default function AdicionarTexto({ navigation }) {
   const [title, setTitle] = useState('');
-  const [text, setText] = useState(false);
+  const [text, setText] = useState('');
 
   const handleAddText = () => {
     Texto.create({ titulo: title, texto: text });
