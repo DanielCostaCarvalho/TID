@@ -13,7 +13,7 @@ export default function LerTexto({ navigation }) {
         menuItems={['Adicionar']}
         onSelection={({ eventType, content, selectionStart, selectionEnd }) => {
           if (eventType == 'Adicionar') {
-            navigation.goBack();
+            navigation.navigate('Palavra', { content });
           }
         }}
         value={texto.texto}

@@ -4,14 +4,16 @@ import { createStackNavigator } from 'react-navigation-stack';
 import ListaTexto from './Components/ListaTexto';
 import AdicionarTexto from './Components/AdicionarTexto';
 import LerTexto from './Components/LerTexto';
+import AdicionarPalavra from './Components/AdicionarPalavra';
 // import { Container } from './styles';
 
 const Textos = createAppContainer(
   createStackNavigator(
     {
-      Litagem: ListaTexto,
+      Listagem: ListaTexto,
       Adicionar: AdicionarTexto,
       Leitura: LerTexto,
+      Palavra: AdicionarPalavra,
     },
     {
       headerLayoutPreset: 'center',
