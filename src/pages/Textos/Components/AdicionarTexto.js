@@ -5,12 +5,13 @@ import Texto from '../../../models/Texto';
 
 import { Container, InputTitle, Title, InputText } from './styles';
 
-export default function AdicionarTexto() {
+export default function AdicionarTexto({ navigation }) {
   const [title, setTitle] = useState('');
   const [text, setText] = useState(false);
 
   const handleAddText = () => {
     Texto.create({ titulo: title, texto: text });
+    navigation.goBack();
   };
 
   return (
