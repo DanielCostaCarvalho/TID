@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 
-import Texto from '../../../models/Texto';
+import { Textos } from '../../../models';
 
 import { Container, InputTitle, Title, InputText } from './styles';
 
@@ -9,8 +9,8 @@ export default function AdicionarTexto({ navigation }) {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
 
-  const handleAddText = () => {
-    Texto.create({ titulo: title, texto: text });
+  const handleAddText = async () => {
+    await Textos.insert({ titulo: title, texto: text });
     navigation.goBack();
   };
 

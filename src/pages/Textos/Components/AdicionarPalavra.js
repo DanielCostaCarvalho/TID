@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-native';
 
-import Texto from '../../../models/Texto';
+import { Expressoes } from '../../../models';
 
 import { Container, InputTitle, Title, InputText } from './styles';
 
@@ -16,7 +16,13 @@ export default function AdicionarTexto(props) {
     setWord(content);
   }, [content]);
 
-  const handleAddWord = () => {
+  const handleAddWord = async () => {
+    await Expressoes.insert({
+      proxtreino: new Date(),
+      expressao: word,
+      traducao: translation,
+      nivel: '0',
+    });
     navigation.goBack();
   };
 
@@ -37,7 +43,7 @@ export default function AdicionarTexto(props) {
         onChangeText={traducao => setTranslation(traducao)}
         value={translation}
       />
-      <Button title="Enviar" onPress={handleAddWord} />
+      <Button title="Adicionar" onPress={handleAddWord} />
     </Container>
   );
 }
