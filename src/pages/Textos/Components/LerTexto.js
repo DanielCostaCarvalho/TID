@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Button } from 'react-native';
 import { SelectableText } from '@astrocoders/react-native-selectable-text';
+
+import { Textos } from '../../../models';
 
 import { Title } from './styles';
 
@@ -17,6 +19,13 @@ export default function LerTexto({ navigation }) {
           }
         }}
         value={texto.texto}
+      />
+      <Button
+        onPress={async () => {
+          await Textos.remove(texto.id);
+          navigation.goBack();
+        }}
+        title="Remover"
       />
     </ScrollView>
   );
