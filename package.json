@@ -17,7 +17,8 @@
     "react-navigation-stack": "^1.5.3",
     "react-navigation-tabs": "^2.4.1",
     "reactotron-react-native": "^3.6.5",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "vasern": "^0.3.61"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
