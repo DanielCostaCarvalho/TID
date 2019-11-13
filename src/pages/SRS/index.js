@@ -1,33 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import Inicio from './Inicio';
+import Treino from './Treino';
 
-import { Expressoes } from '../../models';
-
-// import { Container } from './styles';
-
-export default function SRS() {
-  const [dados, setDados] = useState([]);
-  const [buscar, setBuscar] = useState(false);
-
-  Expressoes.onChange(() => setBuscar(true));
-
-  useEffect(() => {
-    async function fetchData() {
-      const consulta = await Expressoes.data();
-      const treino = consulta.filter(expressao => {
-        return expressao.proxtreino <= new Date();
-      });
-      setDados(treino);
-      console.log(treino);
+const SRS = createAppContainer(
+  createStackNavigator(
+    {
+      Inicio,
+      Treino,
+    },
+    {
+      headerLayoutPreset: 'center',
+      headerBackTitleVisible: false,
+      defaultNavigationOptions: {
+        headerStyle: {
+          backgroundColor: '#006',
+        },
+        headerTintColor: '#fff',
+      },
     }
-    fetchData();
-    console.log(dados);
-    setBuscar(false);
-  }, [buscar]);
+  )
+);
 
-  return (
-    <View>
-      <Text>Página de Repetição espaçada</Text>
-    </View>
-  );
-}
+SRS.navigationOptions = {
+  title: 'Treinamento',
+};
+
+export default SRS;
