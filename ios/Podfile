@@ -29,6 +29,8 @@ target 'TID' do
 
   pod 'react-native-selectable-text', :path => '../node_modules/@astrocoders/react-native-selectable-text'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'TIDTests' do
     inherit! :search_paths
     # Pods for testing

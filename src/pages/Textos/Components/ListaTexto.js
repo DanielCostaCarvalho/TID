@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, Text, Button } from 'react-native';
+import { Button, List } from 'react-native-paper';
 
 import { Textos } from '../../../models';
-import { List, Container, Title, Excerpt, TextButton } from './styles';
+import { FList, Container, Title, Excerpt, TextButton } from './styles';
 
 export default function ListaTexto({ navigation }) {
   const [dados, setDados] = useState([]);
@@ -25,20 +25,26 @@ export default function ListaTexto({ navigation }) {
   return (
     <Container>
       <Button
+        mode="outlined"
+        color="#333"
         onPress={() => {
           navigation.navigate('Adicionar');
         }}
-        title="Adicionar"
-      />
-      <List
+        icon="playlist-plus"
+      >
+        Adicionar
+      </Button>
+      <FList
         data={dados}
         keyExtractor={dado => String(dado.id)}
         renderItem={({ item }) => {
           return (
-            <TextButton onPress={() => handleToReader(item)}>
-              <Title>{item.titulo}</Title>
-              <Excerpt>{item.texto}</Excerpt>
-            </TextButton>
+            <List.Item
+              onPress={() => handleToReader(item)}
+              title={item.titulo}
+              description={item.texto}
+              left={() => <List.Icon icon="text" />}
+            />
           );
         }}
       />

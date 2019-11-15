@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Button } from 'react-native';
+import { Button, TextInput } from 'react-native-paper';
 
 import { Textos } from '../../../models';
 
-import { Container, InputTitle, Title, InputText } from './styles';
+import { Container } from './styles';
 
 export default function AdicionarTexto({ navigation }) {
   const [title, setTitle] = useState('');
@@ -16,22 +16,33 @@ export default function AdicionarTexto({ navigation }) {
 
   return (
     <Container>
-      <Title>Título</Title>
-      <InputTitle
-        placeholder="Título"
+      <TextInput
+        mode="outlined"
+        placeholder="Insira o título aqui"
+        label="Título"
         value={title}
         onChangeText={titulo => setTitle(titulo)}
         returnKeyType="next"
       />
-      <Title>Texto</Title>
-      <InputText
-        placeholder="Texto"
+      <TextInput
+        mode="outlined"
+        placeholder="Insira o conteúdo do texto aqui"
+        label="Texto"
         returnKeyType="send"
         onSubmitEditing={handleAddText}
         onChangeText={texto => setText(texto)}
         value={text}
       />
-      <Button title="Enviar" onPress={handleAddText} />
+
+      <Button
+        mode="contained"
+        dark
+        onPress={handleAddText}
+        icon="plus"
+        color="#333"
+      >
+        Adicionar
+      </Button>
     </Container>
   );
 }

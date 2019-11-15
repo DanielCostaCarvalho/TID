@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-native';
+import { Button, TextInput } from 'react-native-paper';
 
 import { Expressoes } from '../../../models';
 
-import { Container, InputTitle, Title, InputText } from './styles';
+import { Container } from './styles';
 
 export default function AdicionarTexto(props) {
   const { navigation } = props;
@@ -28,22 +28,32 @@ export default function AdicionarTexto(props) {
 
   return (
     <Container>
-      <Title>Palavra</Title>
-      <InputTitle
-        placeholder="Palavra"
+      <TextInput
+        mode="outlined"
+        label="Palavra"
+        placeholder="Insira a palavra aqui"
         value={word}
         onChangeText={palavra => setWord(palavra)}
         returnKeyType="next"
       />
-      <Title>Tradução</Title>
-      <InputText
-        placeholder="Tradução"
+      <TextInput
+        mode="outlined"
+        label="Tradução"
+        placeholder="Insira a tradução aqui"
         returnKeyType="send"
         onSubmitEditing={handleAddWord}
         onChangeText={traducao => setTranslation(traducao)}
         value={translation}
       />
-      <Button title="Adicionar" onPress={handleAddWord} />
+      <Button
+        mode="contained"
+        dark
+        onPress={handleAddWord}
+        icon="plus"
+        color="#333"
+      >
+        Adicionar
+      </Button>
     </Container>
   );
 }

@@ -6,7 +6,7 @@ export const Container = styled.View`
   padding: 10px;
 `;
 
-export const List = styled.FlatList.attrs({
+export const FList = styled.FlatList.attrs({
   showVerticalScrollIndicator: false,
 })`
   margin-top: 20px;

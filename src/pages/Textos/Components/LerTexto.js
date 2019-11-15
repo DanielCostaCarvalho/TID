@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { ScrollView, Button } from 'react-native';
+import { ScrollView } from 'react-native';
+import { Button, Title } from 'react-native-paper';
 import { SelectableText } from '@astrocoders/react-native-selectable-text';
 
 import { Textos } from '../../../models';
 
-import { Title } from './styles';
+// import { Title } from './styles';
 
 export default function LerTexto({ navigation }) {
   const { texto } = navigation.state.params;
@@ -21,12 +22,16 @@ export default function LerTexto({ navigation }) {
         value={texto.texto}
       />
       <Button
+        mode="outlined"
         onPress={async () => {
           await Textos.remove(texto.id);
           navigation.goBack();
         }}
-        title="Remover"
-      />
+        icon="minus"
+        color="#333"
+      >
+        Remover
+      </Button>
     </ScrollView>
   );
 }

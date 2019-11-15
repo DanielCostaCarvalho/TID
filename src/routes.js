@@ -18,7 +18,7 @@ const Routes = createAppContainer(
           fontSize: 20,
         },
         style: {
-          backgroundColor: '#004',
+          backgroundColor: '#000',
         },
       },
     }

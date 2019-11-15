@@ -15,7 +15,7 @@ const SRS = createAppContainer(
       headerBackTitleVisible: false,
       defaultNavigationOptions: {
         headerStyle: {
-          backgroundColor: '#006',
+          backgroundColor: '#333',
         },
         headerTintColor: '#fff',
       },
