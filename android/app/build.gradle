@@ -188,6 +188,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-webview')
     implementation project(':react-native-vector-icons')
     implementation project(':@astrocoders_react-native-selectable-text')
     implementation fileTree(dir: "libs", include: ["*.jar"])

@@ -5,6 +5,7 @@ import ListaTexto from './Components/ListaTexto';
 import AdicionarTexto from './Components/AdicionarTexto';
 import LerTexto from './Components/LerTexto';
 import AdicionarPalavra from './Components/AdicionarPalavra';
+import Traducao from './Components/Traducao';
 // import { Container } from './styles';
 
 const Textos = createAppContainer(
@@ -14,6 +15,7 @@ const Textos = createAppContainer(
       Adicionar: AdicionarTexto,
       Leitura: LerTexto,
       Palavra: AdicionarPalavra,
+      Traducao,
     },
     {
       headerLayoutPreset: 'center',

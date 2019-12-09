@@ -13,10 +13,13 @@ export default function LerTexto({ navigation }) {
     <ScrollView>
       <Title>Título: {texto.titulo}</Title>
       <SelectableText
-        menuItems={['Adicionar']}
+        menuItems={['Adicionar', 'Tradução']}
         onSelection={({ eventType, content, selectionStart, selectionEnd }) => {
           if (eventType == 'Adicionar') {
             navigation.navigate('Palavra', { content });
+          }
+          if (eventType == 'Tradução') {
+            navigation.navigate('Traducao', { content });
           }
         }}
         value={texto.texto}
