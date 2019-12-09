@@ -1,4 +1,4 @@
-package com.tid;
+package com.studiolinguae;
 
 import android.app.Application;
 import android.util.Log;
