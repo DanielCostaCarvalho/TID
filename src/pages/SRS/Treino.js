@@ -16,27 +16,27 @@ export default function SRS() {
     let caixa = palavra.nivel;
     switch (caixa) {
       case '0':
-        novoTreino.setDate(new Date().getDate() + 10);
+        novoTreino.setDate(new Date().getDate() + 1);
         caixa = '1';
         break;
       case '1':
-        novoTreino.setDate(new Date().getDate() + 10);
+        novoTreino.setDate(new Date().getDate() + 2);
         caixa = '2';
         break;
       case '2':
-        novoTreino.setDate(new Date().getDate() + 10);
+        novoTreino.setDate(new Date().getDate() + 4);
         caixa = '3';
         break;
       case '3':
-        novoTreino.setDate(new Date().getDate() + 10);
+        novoTreino.setDate(new Date().getDate() + 8);
         caixa = '4';
         break;
       case '4':
-        novoTreino.setDate(new Date().getDate() + 10);
+        novoTreino.setDate(new Date().getDate() + 16);
         caixa = '5';
         break;
       case '5':
-        novoTreino.setDate(new Date().getDate() + 10);
+        novoTreino.setDate(new Date().getDate() + 32);
         caixa = '5';
         break;
       default:
@@ -53,28 +53,28 @@ export default function SRS() {
     let caixa = palavra.nivel;
     switch (caixa) {
       case '0':
-        novoTreino.setDate(new Date().getDate() + 10);
-        caixa = '1';
+        novoTreino.setDate(new Date().getDate() + 0);
+        caixa = '0';
         break;
       case '1':
-        novoTreino.setDate(new Date().getDate() + 10);
-        caixa = '2';
+        novoTreino.setDate(new Date().getDate() + 1);
+        caixa = '0';
         break;
       case '2':
-        novoTreino.setDate(new Date().getDate() + 10);
-        caixa = '3';
+        novoTreino.setDate(new Date().getDate() + 2);
+        caixa = '1';
         break;
       case '3':
-        novoTreino.setDate(new Date().getDate() + 10);
-        caixa = '4';
+        novoTreino.setDate(new Date().getDate() + 4);
+        caixa = '2';
         break;
       case '4':
-        novoTreino.setDate(new Date().getDate() + 10);
-        caixa = '5';
+        novoTreino.setDate(new Date().getDate() + 8);
+        caixa = '3';
         break;
       case '5':
-        novoTreino.setDate(new Date().getDate() + 10);
-        caixa = '5';
+        novoTreino.setDate(new Date().getDate() + 16);
+        caixa = '4';
         break;
       default:
         break;
