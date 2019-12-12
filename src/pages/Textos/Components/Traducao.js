@@ -5,12 +5,12 @@ export default function Traducao(props) {
   const { navigation } = props;
   const { content } = navigation.state.params;
 
-  const expressao = content.split(' ').join('-');
+  const expressao = encodeURI(content);
 
   return (
     <WebView
       source={{
-        uri: `https://dictionary.cambridge.org/pt/dicionario/ingles-portugues/${expressao}`,
+        uri: `https://www.deepl.com/pt-BR/translator#en/pt/${expressao}`,
       }}
     />
   );
